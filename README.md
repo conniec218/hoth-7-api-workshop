@@ -6,8 +6,10 @@
 
 **Slides:** https://tinyurl.com/apislides
 
+**Link to the Google Maps API:** https://developers.google.com/maps/documentation/
+
 # Let's Begin :)
-Today, you will learn how to use a JSON object and integrate it into a simple webpage that uses Google Maps API. 
+Today, you will learn how to use a JSON object and integrate it into a simple webpage that uses Google Maps API. Today, we'll be learning how to use the Google Maps API specifically for JavaScript (documentation here: https://developers.google.com/maps/documentation/javascript/tutorial). Documentation will be your best friend when using APIs!
 
 # JSON 
 Now what exactly is JSON? JSON stands for JavaScript Object Notation. What this does is allow us to send and receive data in a way that both the server and user can use. JSON works for any programming language, making it super versatile and useful. 
@@ -415,6 +417,48 @@ p {
 And that's all :) As we can see, our job is made A LOT easier by using Google Maps' API. Instead of building a map or hardcoding everything ourselves, by using Google's API, we were able to include all the functionality of Google Maps into simple, readable code. 
 
 ## Something extra :)
+Let's see if we can spice up our webpage *even more* by adding another Maps object: StreetView!
 
+Let's say we want to embed a StreetView object in our webpage, right underneath the map we already have. We want to have it so that clicking on an icon on our original Map shifts the StreetView to the location that we just clicked. 
 
+First things first, how do we embed a StreetView object into our webpage? Exactly how we did it for our Map object!
 
+We create another div that will hold our StreetView object, as follows:
+
+```html
+<div id="pano" style="width:100%;height:400px;"></div>
+ ```
+
+Then, inside our `myMap` function, we call the constructor for the StreetView object, similar to the way we did it for the Map object.
+
+```js
+function myMap() {
+     const myLatLng = {lat: 34.068921, lng: -118.4473698};
+     const map = new google.maps.Map(document.getElementById('map'), {
+       zoom: 12,
+       center: myLatLng
+     });
+     const pano = new google.maps.StreetViewPanorama(document.getElementById('pano'), {
+        position: myLatLng
+    });
+
+    setMarkers(map);
+}
+```
+
+Now that we have our StreetView object, how can we manipulate it so that its position will change when you click on an icon?
+
+The documentation shows us that StreetView objects defined a function called `setPosition` which, as you might have guessed, changes the position of the StreetView. And remember how we already created an eventListener for our markers? (Hint: it opens an infoWindow). We can piggyback off that eventListener and use it to set the position of our StreetView for each 'click' event as well!
+
+That should look like this (in our `setMarkers` function):
+
+```js
+google.maps.event.addListener (marker, 'click', function(){
+    infowindow.open(map, this);
+    pano.setPosition(marker.position);
+});
+```
+
+Finally, we want to change the arguments for `setMarkers` so that it takes in the StreetView object, called `pano` in this case, as well as the map. This way, we can use it in our eventListener later in the function.
+
+Congrats! Hopefully now you have a better understanding of what APIs are, and the amazing features you can build with them :) If you want to make sure you have everything right, or ever need to reference the code, peep the completed code in `example.html`!
