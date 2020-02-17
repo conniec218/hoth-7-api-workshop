@@ -117,6 +117,7 @@ To add a Map object to our webpage, we simply call the Map constructor, which lo
 ```js
 const map =  new google.maps.Map();
 ```
+Where did we get that from? The documentation :))))
 
 How do we use the constructor? Like this:
 
@@ -214,7 +215,7 @@ async function setMarkers(map) {
   }
 }
 ```
-Remember how in our JSON we had elements called 'position', 'title', and 'icon'? Well we are accessing those elements here in the code with `myicon.position`, `myicon.title`, and `myicon.icon`.
+Remember how in our JSON we had elements called 'position', 'title', and 'icon'? Well we are accessing those elements here in the code with `myicon.position`, `myicon.title`, and `myicon.icon` (which can be found in the documentation here: https://developers.google.com/maps/documentation/javascript/reference/marker)
 
 Now that we have can create our Markers, let's call the `setMarkers(map)` function in our `myMap()` function so that we can use it! This is what your code should look like after that:
 
@@ -417,7 +418,7 @@ p {
 And that's all :) As we can see, our job is made A LOT easier by using Google Maps' API. Instead of building a map or hardcoding everything ourselves, by using Google's API, we were able to include all the functionality of Google Maps into simple, readable code. 
 
 ## Something extra :)
-Let's see if we can spice up our webpage *even more* by adding another Maps object: StreetView!
+Let's see if we can spice up our webpage *even more* by adding another Maps object: StreetView! Documentation here: https://developers.google.com/maps/documentation/javascript/reference/street-view
 
 Let's say we want to embed a StreetView object in our webpage, right underneath the map we already have. We want to have it so that clicking on an icon on our original Map shifts the StreetView to the location that we just clicked. 
 
