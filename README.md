@@ -4,7 +4,7 @@
 
 **Teachers:** Connie Chen and Eugene Lo
 
-**Slides:** https://tinyurl.com/apislides
+**Slides:** https://tinyurl.com/hoth7-api-slides
 
 **Link to the Google Maps API:** https://developers.google.com/maps/documentation/
 
@@ -12,9 +12,9 @@
 Today, you will learn how to use a JSON object and integrate it into a simple webpage that uses Google Maps API. Today, we'll be learning how to use the Google Maps API specifically for JavaScript (documentation here: https://developers.google.com/maps/documentation/javascript/tutorial). Documentation will be your best friend when using APIs!
 
 # JSON 
-Now what exactly is JSON? JSON stands for JavaScript Object Notation. What this does is allow us to send and receive data in a way that both the server and user can use. JSON works for any programming language, making it super versatile and useful. 
+Now what exactly is JSON? JSON stands for JavaScript Object Notation. What this does is allow us to send and receive data in a way that both the server and user can use and understand. JSON works for any programming language, making it super versatile and useful. 
 
-The way JSON works is by storing an object's data in a string. In our JSON file, the images are stored in an array of JSON objects. As we can see in the code sample below, JSON can store whatever data we give it. 
+JSON is structured in key-value pairs. In our JSON file, the images are stored in an array of JSON objects. As we can see in the code sample below, JSON can store whatever data we give it. 
 
 ```
 [
@@ -38,7 +38,7 @@ The way JSON works is by storing an object's data in a string. In our JSON file,
 
 ```
 
-As we can see above, the JSON contains a string version of a list of parameters that each store a value. For those familiar with JavaScript, you'll notice that the format of this is similar to the way Objects are declared in JavaScript. Later on, we'll be accessing these values when using the Google Maps API. 
+As we can see above, each JSON object contains a set of parameters that each store a value. For those familiar with JavaScript, you'll notice that the format of this is similar to the way Objects are structures in JavaScript. Later on, we'll be accessing these values when using the Google Maps API. 
 
 BUT FIRST....How do we even access this JSON data??
 
@@ -54,7 +54,7 @@ async function getIcons() {
 }
 ```
 
-Now we must put put this function in our project so that we can use it later to load these images and their data. 
+Now we must put this function in our project so that we can use it later to load these images and their data. 
 
 To do this, we simply insert this function within the `<script></script>` html elements.
 
