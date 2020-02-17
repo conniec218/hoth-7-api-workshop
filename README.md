@@ -4,7 +4,7 @@
 
 **Teachers:** Connie Chen and Eugene Lo
 
-**Slides:** https://tinyurl.com/apislides
+**Slides:** https://tinyurl.com/hoth7-api-slides
 
 # Let's Begin :)
 Today, you will learn how to use a JSON object and integrate it into a simple webpage that uses Google Maps API. 
